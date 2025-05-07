@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
 import { ArrowRight } from "lucide-react"
 import CircuitAnimation from "../three/CircuitAnimation"
+import { useProductStore } from "@/store/productStore"
 
 interface Slide {
   imageUrl: string;
@@ -20,13 +21,39 @@ interface HeroSlideshowProps {
 
 const HeroSlideshow = ({ slides }: HeroSlideshowProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { products, fetchProducts } = useProductStore();
+  const [featuredProducts, setFeaturedProducts] = useState<Slide[]>(slides);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlide((prev) => (prev + 1) % featuredProducts.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, [featuredProducts.length]);
+
+  useEffect(() => {
+    // Fetch products if not already loaded
+    if (products.length === 0) {
+      fetchProducts();
+    } else {
+      // Create dynamic slides from products
+      const productSlides = products
+        .filter(product => product.image_url) // Only use products with images
+        .slice(0, 5) // Limit to 5 products
+        .map(product => ({
+          imageUrl: product.image_url || '',
+          title: product.name,
+          description: product.description || 'Premium electronic component with advanced features',
+          buttonText: 'View Product',
+          buttonLink: `/product/${product.id}`
+        }));
+      
+      // If we have product slides, merge them with any static slides
+      if (productSlides.length > 0) {
+        setFeaturedProducts([...productSlides, ...slides.slice(0, 2)]);
+      }
+    }
+  }, [products, fetchProducts, slides]);
 
   return (
     <div className="w-full relative overflow-hidden">
@@ -51,7 +78,7 @@ const HeroSlideshow = ({ slides }: HeroSlideshowProps) => {
         }}
       >
         <CarouselContent>
-          {slides.map((slide, index) => (
+          {featuredProducts.map((slide, index) => (
             <CarouselItem key={index}>
               <div className="relative w-full h-[600px] overflow-hidden">
                 <img 
@@ -82,7 +109,7 @@ const HeroSlideshow = ({ slides }: HeroSlideshowProps) => {
       
       {/* Enhanced 3D-style slide indicators */}
       <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2 z-10">
-        {slides.map((_, index) => (
+        {featuredProducts.map((_, index) => (
           <div 
             key={index} 
             onClick={() => setCurrentSlide(index)}

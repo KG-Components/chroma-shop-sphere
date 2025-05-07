@@ -10,7 +10,8 @@ import { useOrderStore } from "@/store/orderStore";
 import RequireAuth from "@/components/auth/RequireAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { User, ShoppingBag, DollarSign, Package, Send, AlertCircle, CheckCircle } from "lucide-react";
+import { User, ShoppingBag, DollarSign, Package, Send, AlertCircle, CheckCircle, Layers } from "lucide-react";
+import ProductManagement from "./Admin/ProductManagement";
 
 const Admin = () => {
   const { isLoading: authLoading } = useAuthStore();
@@ -209,11 +210,20 @@ const Admin = () => {
           </Card>
         )}
 
-        <Tabs defaultValue="orders" className="mt-8">
+        <Tabs defaultValue="products" className="mt-8">
           <TabsList>
+            <TabsTrigger value="products" className="flex items-center gap-1">
+              <Layers className="h-4 w-4" />
+              Products
+            </TabsTrigger>
             <TabsTrigger value="orders">Orders</TabsTrigger>
             <TabsTrigger value="users">Users</TabsTrigger>
           </TabsList>
+          
+          <TabsContent value="products" className="mt-6">
+            <ProductManagement />
+          </TabsContent>
+          
           <TabsContent value="orders" className="mt-6">
             {ordersLoading ? (
               <div className="space-y-4">

@@ -12,6 +12,11 @@ export type ProductWithCategory = Product & {
   category: Category | null;
 };
 
+export type ProductWithImage = ProductWithCategory & {
+  imageFile?: File;
+  imagePreview?: string;
+};
+
 export type OrderWithItems = Order & {
   items: (OrderItem & { product: Product })[];
 };
