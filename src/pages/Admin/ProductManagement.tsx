@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -117,6 +118,9 @@ const ProductManagement = () => {
       const fileName = `${Math.random().toString(36).substring(2, 15)}-${Date.now()}.${fileExt}`;
       const filePath = `products/${fileName}`;
 
+      // Set initial upload progress
+      setUploadProgress(10);
+      
       // Upload the file without using onUploadProgress
       const { error } = await supabase.storage
         .from('product-images')
