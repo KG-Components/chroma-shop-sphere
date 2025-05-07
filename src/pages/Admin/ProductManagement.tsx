@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -118,19 +117,20 @@ const ProductManagement = () => {
       const fileName = `${Math.random().toString(36).substring(2, 15)}-${Date.now()}.${fileExt}`;
       const filePath = `products/${fileName}`;
 
+      // Upload the file without using onUploadProgress
       const { error } = await supabase.storage
         .from('product-images')
         .upload(filePath, productImage, {
           cacheControl: '3600',
-          upsert: true,
-          onUploadProgress: (progress) => {
-            setUploadProgress((progress.loaded / progress.total) * 100);
-          },
+          upsert: true
         });
 
       if (error) {
         throw error;
       }
+
+      // Manually set progress to 100% since we can't track it
+      setUploadProgress(100);
 
       // Get the public URL
       const { data } = supabase.storage
