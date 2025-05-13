@@ -65,7 +65,8 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				sircony: '#136730', // Added new Sircony brand color
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

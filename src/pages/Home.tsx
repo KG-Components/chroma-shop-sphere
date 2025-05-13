@@ -35,7 +35,7 @@ const Home = () => {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link to="/shop">
-                <Button size="lg" className="bg-red-700 hover:bg-red-800 text-white border-0 rounded-none px-8 py-6 text-lg">
+                <Button size="lg" className="bg-sircony hover:bg-sircony/90 text-white border-0 rounded-none px-8 py-6 text-lg">
                   Shop Now
                 </Button>
               </Link>
@@ -54,7 +54,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Categories</h2>
-            <div className="h-1 w-20 bg-red-700 mx-auto"></div>
+            <div className="h-1 w-20 bg-sircony mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categories.map((category) => (
@@ -80,7 +80,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Products</h2>
-            <div className="h-1 w-20 bg-red-700 mx-auto"></div>
+            <div className="h-1 w-20 bg-sircony mx-auto"></div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-6">
             {featuredProducts.map((product) => (
@@ -106,7 +106,7 @@ const Home = () => {
                   <h3 className="text-sm font-medium text-gray-900 line-clamp-2 mb-2">
                     {product.name}
                   </h3>
-                  <p className="font-bold text-red-700">
+                  <p className="font-bold text-sircony">
                     ${Number(product.price).toFixed(2)}
                   </p>
                 </div>
@@ -115,7 +115,7 @@ const Home = () => {
           </div>
           <div className="text-center mt-10">
             <Link to="/shop">
-              <Button className="bg-red-700 hover:bg-red-800 rounded-none">
+              <Button className="bg-sircony hover:bg-sircony/90 rounded-none">
                 View All Products <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -131,7 +131,7 @@ const Home = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 About Our Company
               </h2>
-              <div className="h-1 w-20 bg-red-700 mb-6"></div>
+              <div className="h-1 w-20 bg-sircony mb-6"></div>
               <p className="text-gray-700 mb-6">
                 We are a leading supplier of electronic components and accessories, serving 
                 technicians, engineers, and hobbyists alike. With years of experience in the industry,
@@ -142,7 +142,7 @@ const Home = () => {
                 test equipment, tools, and accessories to meet all your project needs.
               </p>
               <Link to="/about">
-                <Button className="bg-red-700 hover:bg-red-800 rounded-none">
+                <Button className="bg-sircony hover:bg-sircony/90 rounded-none">
                   Learn More About Us <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -161,14 +161,14 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-red-700 text-white">
+      <section className="py-16 bg-sircony text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Start Your Project?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Browse our extensive catalog of quality electronic components.
           </p>
           <Link to="/shop">
-            <Button size="lg" className="bg-white text-red-700 hover:bg-gray-100 rounded-none px-8 py-6">
+            <Button size="lg" className="bg-white text-sircony hover:bg-gray-100 rounded-none px-8 py-6">
               Shop Now <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>

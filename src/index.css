@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 142 76% 36%;
+    --primary: 143 53% 24%; /* Changed to match #136730 */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -31,7 +31,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 142 76% 36%;
+    --ring: 143 53% 24%; /* Changed to match #136730 */
 
     --radius: 0.5rem;
 
@@ -55,7 +55,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 0 84% 40%;
+    --primary: 143 53% 24%; /* Changed to match #136730 */
     --primary-foreground: 0 0% 98%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -442,7 +442,7 @@
 
 /* Sircony specific styles */
 .btn-sircony {
-  @apply bg-green-700 hover:bg-green-800 text-white rounded-none px-6 py-3 font-medium transition-all;
+  @apply bg-sircony hover:bg-sircony/90 text-white rounded-none px-6 py-3 font-medium transition-all;
 }
 
 .section-heading {
@@ -450,7 +450,7 @@
 }
 
 .section-divider {
-  @apply h-1 w-20 bg-green-700 mb-6;
+  @apply h-1 w-20 bg-sircony mb-6;
 }
 
 .product-card {
@@ -466,5 +466,5 @@
 }
 
 .product-price {
-  @apply font-bold text-green-700;
+  @apply font-bold text-sircony;
 }
