@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 221 83% 53%;
+    --primary: 0 84% 40%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -31,7 +30,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 53%;
+    --ring: 0 84% 40%;
 
     --radius: 0.5rem;
 
@@ -55,8 +54,8 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 84% 40%;
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -90,7 +89,12 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
+  }
+
+  /* Added font-family for Poppins to match Sircony */
+  html {
+    font-family: 'Poppins', sans-serif;
   }
 }
 
@@ -433,4 +437,33 @@
   font-weight: 500;
   z-index: 10;
   border-radius: 4px;
+}
+
+/* Sircony specific styles */
+.btn-sircony {
+  @apply bg-red-700 hover:bg-red-800 text-white rounded-none px-6 py-3 font-medium transition-all;
+}
+
+.section-heading {
+  @apply text-3xl font-bold text-gray-900 mb-4;
+}
+
+.section-divider {
+  @apply h-1 w-20 bg-red-700 mb-6;
+}
+
+.product-card {
+  @apply bg-white border border-gray-200 hover:shadow-lg transition-shadow;
+}
+
+.product-image {
+  @apply aspect-square overflow-hidden;
+}
+
+.product-title {
+  @apply text-sm font-medium text-gray-900 line-clamp-2 mb-2;
+}
+
+.product-price {
+  @apply font-bold text-red-700;
 }

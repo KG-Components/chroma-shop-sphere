@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { useProductStore } from "@/store/productStore";
 import { ArrowRight } from "lucide-react";
 
@@ -14,208 +13,169 @@ const Home = () => {
     fetchCategories();
   }, [fetchProducts, fetchCategories]);
 
-  const featuredProducts = products.slice(0, 4);
+  const featuredProducts = products.slice(0, 6);
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section with Beautiful Background */}
-      <section 
-        className="bg-cover bg-center text-white relative"
-        style={{
-          backgroundImage: "linear-gradient(rgba(0, 20, 50, 0.7), rgba(0, 20, 50, 0.7)), url('https://images.unsplash.com/photo-1580508174046-170816f65662?q=80&w=1470&auto=format&fit=crop')",
-          height: "600px"
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-transparent" />
-        <div className="container mx-auto px-4 py-16 md:py-24 relative z-10 h-full flex items-center">
-          <div className="max-w-3xl mx-auto text-center backdrop-blur-sm bg-black/20 p-8 rounded-lg border border-white/10 shadow-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
-              Quality Electronic Components for Every Project
+      {/* Hero Banner Section */}
+      <section className="relative bg-black">
+        <div className="relative h-[80vh] overflow-hidden">
+          <div className="absolute inset-0 z-10 bg-black/60"></div>
+          <img 
+            src="https://images.unsplash.com/photo-1580508174046-170816f65662?q=80&w=1470&auto=format&fit=crop" 
+            alt="Hero Image" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 max-w-4xl">
+              Electronic Components & Accessories
             </h1>
-            <p className="text-xl mb-8">
-              Discover our comprehensive range of tools, instruments, and
-              components for professionals and hobbyists alike.
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl">
+              Quality electronic components for industry professionals, technicians, and enthusiasts
             </p>
-            <Link to="/shop">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-                Shop Now <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link to="/shop">
+                <Button size="lg" className="bg-red-700 hover:bg-red-800 text-white border-0 rounded-none px-8 py-6 text-lg">
+                  Shop Now
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 rounded-none px-8 py-6 text-lg">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Categories Section with Gradient Background */}
-      <section className="py-16 relative overflow-hidden" style={{
-        backgroundImage: "linear-gradient(90deg, hsla(221, 45%, 98%, 1) 0%, hsla(220, 78%, 95%, 1) 100%)"
-      }}>
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-purple-500" />
+      {/* Categories Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">
-            Browse Our Categories
-          </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Explore our extensive collection of electronic components organized by category
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Categories</h2>
+            <div className="h-1 w-20 bg-red-700 mx-auto"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categories.map((category) => (
               <Link
                 key={category.id}
                 to={`/shop?category=${category.name}`}
-                className="transform hover:scale-105 transition duration-300"
+                className="group"
               >
-                <Card className="overflow-hidden h-full shadow-lg hover:shadow-xl border-0">
-                  <div className="h-32 bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center">
-                    <div className="text-2xl font-bold text-white">
-                      {category.name}
-                    </div>
+                <div className="overflow-hidden bg-gray-100 aspect-square relative">
+                  <div className="absolute inset-0 bg-gray-900/30 group-hover:bg-gray-900/50 transition-all z-10"></div>
+                  <div className="absolute inset-0 z-20 flex items-center justify-center p-6">
+                    <h3 className="text-2xl font-bold text-white text-center">{category.name}</h3>
                   </div>
-                  <CardContent className="p-4 bg-white">
-                    <p className="text-sm text-gray-600">
-                      {category.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Products Section with Subtle Background */}
-      <section className="py-16" style={{
-        backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=3000&auto=format&fit=crop')",
-        backgroundSize: "cover",
-        backgroundAttachment: "fixed",
-        backgroundPosition: "center"
-      }}>
+      {/* Featured Products Section */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">
-            Featured Products
-          </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Our most popular and highly recommended electronic components
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Products</h2>
+            <div className="h-1 w-20 bg-red-700 mx-auto"></div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-6">
             {featuredProducts.map((product) => (
               <Link
                 key={product.id}
                 to={`/product/${product.id}`}
-                className="transform hover:scale-105 transition duration-300"
+                className="group bg-white border border-gray-200 hover:shadow-lg transition-shadow"
               >
-                <Card className="overflow-hidden h-full shadow-lg hover:shadow-xl border-0">
-                  <div className="h-48 bg-gray-100 flex items-center justify-center">
-                    {product.image_url ? (
-                      <img
-                        src={product.image_url}
-                        alt={product.name}
-                        className="h-full w-full object-cover"
-                      />
-                    ) : (
-                      <div className="text-gray-400">No image</div>
-                    )}
-                  </div>
-                  <CardContent className="p-6 bg-white">
-                    <h3 className="font-semibold mb-2">{product.name}</h3>
-                    <p className="text-sm text-gray-600 mb-2">
-                      {product.description?.substring(0, 60)}
-                      {(product.description?.length || 0) > 60 && "..."}
-                    </p>
-                    <p className="font-bold text-blue-600">${Number(product.price).toFixed(2)}</p>
-                  </CardContent>
-                </Card>
+                <div className="aspect-square overflow-hidden">
+                  {product.image_url ? (
+                    <img
+                      src={product.image_url}
+                      alt={product.name}
+                      className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform"
+                    />
+                  ) : (
+                    <div className="h-full w-full flex items-center justify-center bg-gray-100 text-gray-400">
+                      No image
+                    </div>
+                  )}
+                </div>
+                <div className="p-4">
+                  <h3 className="text-sm font-medium text-gray-900 line-clamp-2 mb-2">
+                    {product.name}
+                  </h3>
+                  <p className="font-bold text-red-700">
+                    ${Number(product.price).toFixed(2)}
+                  </p>
+                </div>
               </Link>
             ))}
           </div>
-          <div className="text-center mt-12">
+          <div className="text-center mt-10">
             <Link to="/shop">
-              <Button className="bg-blue-700 hover:bg-blue-800">View All Products <ArrowRight className="ml-2 h-5 w-5" /></Button>
+              <Button className="bg-red-700 hover:bg-red-800 rounded-none">
+                View All Products <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section with Color Background */}
-      <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
+      {/* About Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">
-            Why Choose KG Components
-          </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            We pride ourselves on offering the best experience for electronics enthusiasts
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-              <div className="text-4xl text-blue-600 mb-4 flex justify-center">
-                ⭐
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Quality Products</h3>
-              <p className="text-gray-600">
-                All our products are carefully selected from trusted manufacturers
-                and undergo rigorous quality testing.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                About Our Company
+              </h2>
+              <div className="h-1 w-20 bg-red-700 mb-6"></div>
+              <p className="text-gray-700 mb-6">
+                We are a leading supplier of electronic components and accessories, serving 
+                technicians, engineers, and hobbyists alike. With years of experience in the industry,
+                we pride ourselves on offering quality products at competitive prices.
               </p>
+              <p className="text-gray-700 mb-6">
+                Our extensive inventory includes a wide range of electronic components, 
+                test equipment, tools, and accessories to meet all your project needs.
+              </p>
+              <Link to="/about">
+                <Button className="bg-red-700 hover:bg-red-800 rounded-none">
+                  Learn More About Us <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
-            <div className="p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-              <div className="text-4xl text-blue-600 mb-4 flex justify-center">
-                🚚
+            <div className="relative">
+              <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=2070&auto=format&fit=crop" 
+                  alt="About Us" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Fast Delivery</h3>
-              <p className="text-gray-600">
-                We ensure quick processing and shipping to get your components to
-                you when you need them.
-              </p>
-            </div>
-            <div className="p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-              <div className="text-4xl text-blue-600 mb-4 flex justify-center">
-                👨‍💻
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Expert Support</h3>
-              <p className="text-gray-600">
-                Our team of technical experts is always ready to help you with
-                product selection and technical advice.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Newsletter Section with Beautiful Background */}
-      <section className="py-16 text-white relative">
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-          backgroundImage: "linear-gradient(rgba(0, 20, 80, 0.8), rgba(0, 20, 80, 0.8)), url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=3000&auto=format&fit=crop')",
-          backgroundAttachment: "fixed"
-        }} />
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-2xl mx-auto backdrop-blur-sm bg-black/20 p-8 rounded-lg border border-white/10 shadow-xl">
-            <h2 className="text-3xl font-bold mb-4">
-              Stay Updated with Our Newsletter
-            </h2>
-            <p className="text-lg mb-6">
-              Subscribe to receive updates on new products, special offers, and
-              useful tips for your electronic projects.
-            </p>
-            <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
-              <Input
-                type="email"
-                placeholder="Your email address"
-                className="bg-white text-gray-800"
-              />
-              <Button className="bg-white text-blue-700 hover:bg-gray-100">
-                Subscribe
-              </Button>
-            </div>
-          </div>
+      {/* CTA Section */}
+      <section className="py-16 bg-red-700 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">Ready to Start Your Project?</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Browse our extensive catalog of quality electronic components.
+          </p>
+          <Link to="/shop">
+            <Button size="lg" className="bg-white text-red-700 hover:bg-gray-100 rounded-none px-8 py-6">
+              Shop Now <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
   );
 };
-
-const Input = ({ className, ...props }) => (
-  <input
-    className={`px-4 py-2 rounded-md flex-1 border-0 ${className}`}
-    {...props}
-  />
-);
 
 export default Home;
