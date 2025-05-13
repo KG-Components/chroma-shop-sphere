@@ -38,7 +38,7 @@ const Contact = () => {
   return (
     <div className="bg-white">
       {/* Hero Banner */}
-      <section className="bg-gradient-to-r from-red-700 to-red-900 text-white py-16">
+      <section className="bg-gradient-to-r from-green-700 to-green-900 text-white py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold mb-4 text-center">Contact Us</h1>
           <p className="max-w-2xl mx-auto text-center text-lg">
@@ -52,7 +52,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <div>
             <h2 className="text-2xl font-semibold mb-6 text-gray-900">Get in Touch</h2>
-            <div className="h-1 w-20 bg-red-700 mb-6"></div>
+            <div className="h-1 w-20 bg-green-700 mb-6"></div>
             <p className="text-gray-600 mb-8">
               We'd love to hear from you! Whether you have a question about our products, need technical assistance, or want to discuss a business opportunity, our team is ready to help.
             </p>
@@ -61,8 +61,8 @@ const Contact = () => {
               <CardContent className="p-6">
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="bg-red-100 p-3 rounded-full mr-4">
-                      <MapPin className="h-6 w-6 text-red-700" />
+                    <div className="bg-green-100 p-3 rounded-full mr-4">
+                      <MapPin className="h-6 w-6 text-green-700" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Our Address</h3>
@@ -75,8 +75,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start">
-                    <div className="bg-red-100 p-3 rounded-full mr-4">
-                      <Mail className="h-6 w-6 text-red-700" />
+                    <div className="bg-green-100 p-3 rounded-full mr-4">
+                      <Mail className="h-6 w-6 text-green-700" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Email Us</h3>
@@ -85,8 +85,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start">
-                    <div className="bg-red-100 p-3 rounded-full mr-4">
-                      <Phone className="h-6 w-6 text-red-700" />
+                    <div className="bg-green-100 p-3 rounded-full mr-4">
+                      <Phone className="h-6 w-6 text-green-700" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Call Us</h3>
@@ -100,7 +100,7 @@ const Contact = () => {
 
             <div>
               <h2 className="text-2xl font-semibold mb-4 text-gray-900">Business Hours</h2>
-              <div className="h-1 w-20 bg-red-700 mb-6"></div>
+              <div className="h-1 w-20 bg-green-700 mb-6"></div>
               <Card className="shadow-lg border-0">
                 <CardContent className="p-6">
                   <div className="space-y-3">
@@ -124,7 +124,7 @@ const Contact = () => {
 
           <div>
             <h2 className="text-2xl font-semibold mb-4 text-gray-900">Send Us a Message</h2>
-            <div className="h-1 w-20 bg-red-700 mb-6"></div>
+            <div className="h-1 w-20 bg-green-700 mb-6"></div>
             <Card className="shadow-lg border-0">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -137,7 +137,7 @@ const Contact = () => {
                       placeholder="John Doe"
                       required
                       disabled={isLoading}
-                      className="border-gray-300 focus:border-red-700 focus:ring-red-700"
+                      className="border-gray-300 focus:border-green-700 focus:ring-green-700"
                     />
                   </div>
 
@@ -151,7 +151,7 @@ const Contact = () => {
                       placeholder="john@example.com"
                       required
                       disabled={isLoading}
-                      className="border-gray-300 focus:border-red-700 focus:ring-red-700"
+                      className="border-gray-300 focus:border-green-700 focus:ring-green-700"
                     />
                   </div>
 
@@ -164,7 +164,7 @@ const Contact = () => {
                       placeholder="How can we help you?"
                       required
                       disabled={isLoading}
-                      className="border-gray-300 focus:border-red-700 focus:ring-red-700"
+                      className="border-gray-300 focus:border-green-700 focus:ring-green-700"
                     />
                   </div>
 
@@ -178,13 +178,13 @@ const Contact = () => {
                       rows={6}
                       required
                       disabled={isLoading}
-                      className="border-gray-300 focus:border-red-700 focus:ring-red-700 resize-none"
+                      className="border-gray-300 focus:border-green-700 focus:ring-green-700 resize-none"
                     />
                   </div>
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-none transition"
+                    className="w-full bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-none transition"
                     disabled={isLoading}
                   >
                     {isLoading ? (
@@ -201,7 +201,7 @@ const Contact = () => {
 
             <div className="mt-8">
               <h2 className="text-2xl font-semibold mb-4 text-gray-900">Find Us</h2>
-              <div className="h-1 w-20 bg-red-700 mb-6"></div>
+              <div className="h-1 w-20 bg-green-700 mb-6"></div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <div className="bg-gray-200 h-80 rounded-lg flex items-center justify-center">
                   <p className="text-gray-500">Map placeholder - Google Maps would be embedded here</p>

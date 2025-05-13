@@ -12,22 +12,22 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">
-              KG<span className="text-red-500">Components</span>
+              KG<span className="text-green-500">Components</span>
             </h3>
             <p className="text-gray-300 mb-4">
               Your trusted source for quality electronic components and tools.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-red-400 transition-colors">
+              <a href="#" className="text-gray-300 hover:text-green-400 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-red-400 transition-colors">
+              <a href="#" className="text-gray-300 hover:text-green-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-red-400 transition-colors">
+              <a href="#" className="text-gray-300 hover:text-green-400 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-red-400 transition-colors">
+              <a href="#" className="text-gray-300 hover:text-green-400 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -37,22 +37,22 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-red-400 transition-colors inline-block">
+                <Link to="/" className="text-gray-300 hover:text-green-400 transition-colors inline-block">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/shop" className="text-gray-300 hover:text-red-400 transition-colors inline-block">
+                <Link to="/shop" className="text-gray-300 hover:text-green-400 transition-colors inline-block">
                   Shop
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-red-400 transition-colors inline-block">
+                <Link to="/about" className="text-gray-300 hover:text-green-400 transition-colors inline-block">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-red-400 transition-colors inline-block">
+                <Link to="/contact" className="text-gray-300 hover:text-green-400 transition-colors inline-block">
                   Contact Us
                 </Link>
               </li>
@@ -63,27 +63,27 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-white">Categories</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/shop?category=Tools" className="text-gray-300 hover:text-red-400 transition-colors inline-block">
+                <Link to="/shop?category=Tools" className="text-gray-300 hover:text-green-400 transition-colors inline-block">
                   Tools
                 </Link>
               </li>
               <li>
-                <Link to="/shop?category=Accessories" className="text-gray-300 hover:text-red-400 transition-colors inline-block">
+                <Link to="/shop?category=Accessories" className="text-gray-300 hover:text-green-400 transition-colors inline-block">
                   Accessories
                 </Link>
               </li>
               <li>
-                <Link to="/shop?category=Instruments" className="text-gray-300 hover:text-red-400 transition-colors inline-block">
+                <Link to="/shop?category=Instruments" className="text-gray-300 hover:text-green-400 transition-colors inline-block">
                   Instruments
                 </Link>
               </li>
               <li>
-                <Link to="/shop?category=Power%20Products" className="text-gray-300 hover:text-red-400 transition-colors inline-block">
+                <Link to="/shop?category=Power%20Products" className="text-gray-300 hover:text-green-400 transition-colors inline-block">
                   Power Products
                 </Link>
               </li>
               <li>
-                <Link to="/shop?category=Test%20and%20Measurements" className="text-gray-300 hover:text-red-400 transition-colors inline-block">
+                <Link to="/shop?category=Test%20and%20Measurements" className="text-gray-300 hover:text-green-400 transition-colors inline-block">
                   Test & Measurements
                 </Link>
               </li>
@@ -94,23 +94,23 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-white">Contact Us</h4>
             <address className="not-italic text-gray-300 space-y-2">
               <p className="flex items-start">
-                <MapPin className="h-5 w-5 mr-2 text-red-500 flex-shrink-0" />
+                <MapPin className="h-5 w-5 mr-2 text-green-500 flex-shrink-0" />
                 <span>137 Cassava Residencial<br />Via Expressa<br />Luanda, Angola</span>
               </p>
               <p className="flex items-center">
-                <Mail className="h-5 w-5 mr-2 text-red-500 flex-shrink-0" />
-                <span className="hover:text-red-400 transition-colors">
+                <Mail className="h-5 w-5 mr-2 text-green-500 flex-shrink-0" />
+                <span className="hover:text-green-400 transition-colors">
                   ___________________
                 </span>
               </p>
               <p className="flex items-center">
-                <Phone className="h-5 w-5 mr-2 text-red-500 flex-shrink-0" />
-                <span className="hover:text-red-400 transition-colors">
+                <Phone className="h-5 w-5 mr-2 text-green-500 flex-shrink-0" />
+                <span className="hover:text-green-400 transition-colors">
                   +244 923 054 613
                 </span>
               </p>
               <p className="flex items-center ml-7">
-                <span className="hover:text-red-400 transition-colors">
+                <span className="hover:text-green-400 transition-colors">
                   +244 921 191 402
                 </span>
               </p>
@@ -128,16 +128,16 @@ const Footer = () => {
             </p>
             <div className="mt-4 md:mt-0">
               <nav className="flex flex-wrap space-x-4 justify-center">
-                <Link to="/privacy" className="text-gray-400 hover:text-red-400 text-sm">
+                <Link to="/privacy" className="text-gray-400 hover:text-green-400 text-sm">
                   Privacy Policy
                 </Link>
-                <Link to="/terms" className="text-gray-400 hover:text-red-400 text-sm">
+                <Link to="/terms" className="text-gray-400 hover:text-green-400 text-sm">
                   Terms of Service
                 </Link>
-                <Link to="/shipping" className="text-gray-400 hover:text-red-400 text-sm">
+                <Link to="/shipping" className="text-gray-400 hover:text-green-400 text-sm">
                   Shipping Policy
                 </Link>
-                <Link to="/returns" className="text-gray-400 hover:text-red-400 text-sm">
+                <Link to="/returns" className="text-gray-400 hover:text-green-400 text-sm">
                   Returns
                 </Link>
               </nav>
