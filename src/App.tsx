@@ -18,6 +18,7 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import { create } from 'zustand';
+import "./App.css";
 
 // Create Zustand store for zustand
 create(() => ({}));
